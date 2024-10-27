@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  overflow: hidden;
+  padding-left: 20px; /* Sol tarafta boşluk oluşturun */
+}
+
+.flex {
+  padding-left: 2.5rem; /* 8 birim yerine rem kullanarak boşluk oluşturabilirsiniz */
+}
+
+
+.left-panel {
+  width: 40%;
+  background-color: #1e293b;
+  padding: 30px;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  position: relative; /* Allow positioning of the question numbers */
+}
+
+.left-panel h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+.left-panel p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* Updated styles for question numbers */
+.question-number {
+  position: absolute;
+  top: 20px; /* Yukarıya taşımak için değeri azaltın */
+  left: 5px; /* Sola taşımak için değeri azaltın */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.question-number button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.question-number button:hover {
+  background-color: #0056b3;
+}
+
+.number-buttons-container {
+  position: absolute;
+  left: -1.4rem; /* Slightly move it to the left */
+  top: 40%; /* Adjust this value to move it slightly down */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Use a smaller gap for tighter spacing */
+}
+
+
+.right-panel {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.language-select {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.language-select label {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #1e293b;
+}
+
+.language-select select {
+  padding: 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.language-select select:hover,
+.language-select select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.monaco-editor {
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.run-button {
+  background-color: #007bff;
+  color: white;
+}
+
+button.submit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.terminal-panel {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+}
+
+.terminal-panel h4 {
+  font-size: 18px;
+  color: #a7b6c5;
+}
+
+.terminal-panel pre {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* Submission message */
+.submission-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
